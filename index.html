@@ -4,13 +4,324 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Reefic Protocol</title>
+    <style>
+        @font-face {
+            font-family: Montserrat-Black;
+            src: url(fonts/Montserrat-Black.ttf);
+            font-family: Montserrat-Light;
+            src: url(fonts/Montserrat-Light.ttf);
+            font-family: Montserrat-Thin;
+            src: url(fonts/Montserrat-Thin.ttf);
+            font-family: Montserrat-Semibold;
+            src: url(fonts/Montserrat-Semibold.ttf);
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1, button{
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+        }
+        a{
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+       
+        .main{
+            background-image:url("images/Rectangle 13.png");
+            height: 100vh;
+            width: 100%;
+        }
+        .container, .hero-content, .releases-content, .updates-content, .benefits-content{
+            width: 1080px;
+            margin: 0 auto;
+        }
+        nav, .timer, .timer-sign, .btn,.hero-text, .img-container, .social-media, .hero-btn, .releases-text, .card, .card-text, .releases-btn, .updates-text, .updates-subtitle, .updates-btn, .benefits{
+            display:flex;
+            justify-content: center;
+        }
+        .nav-link, .nav-link a button, .timer ul li, .timer-sign ul li{
+            display:inline;
+            font-stretch: expanded;
+            color: white;
+            padding: 0.875rem;
+            font-size: 0.875rem;
+        }
+        .nav-link a, .nav-link a button{
+            color: white;
+        }
+        .nav-link a button{
+            background-color: transparent;
+            border: solid white 1px;
+        }
+        .logo{
+            position: relative;
+            top: 20px;
+        }
+        header{
+            padding: 90px 0px 40px;
+        }
+        header h1, header h4{
+            color: white;
+            display: flex;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+        header h4{
+            padding: 0px 200px;
+            text-align:center;
+        }
+        header h1{
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .main-text{
+            margin-top: 50px;
+            font-size: 3rem;
+        }
+        .btn button{
+            background-color: #9bc64f;
+            border:none;
+            color: black;
+            padding: 10px 30px;
+            margin: 40px 10px 0px 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+        .hero{
+            background-image: url("images/Rectangle 4.png");
+            background-size: cover;
+            position: relative;
+            top: -120px;
+            padding-bottom: 50px;
+        }
+        .hero h2, .releases h2, .updates h2{
+            text-transform: uppercase;
+            font-family: 'Montserrat-Semibold';
+            font-weight: bold;
+            color: #5a1f5f;
+        }
+        .hero h2{
+            padding: 100px 0px;
+        }
+        .releases h2{
+            text-transform: uppercase;
+            font-family: 'Montserrat-Semibold';
+            font-weight: bold;
+            color: #5a1f5f;
+        }
+        .hero-content{
+            display: grid;
+            grid-template-rows: 130px 1fr auto;
+        }
+        .releases-content{
+            display: grid;
+            grid-template-rows: 50px 1fr auto;
+        }
+        .updates-content{
+            display: grid;
+            grid-template-rows: 40px 30px 1fr auto;
+        }
+        .img-container{
+            margin: 10px;
+            grid: 2/3;
+        }
+        .hero-text, .releases-text, .updates-text{
+            grid-row: 1/2;
+            padding-bottom: 5px;
+        }
+    
+        .social-media img{
+            width: 2rem;
+            margin: 10px;
+        }
+        .hero-btn button, .releases-btn button, .updates-btn button, .benefits-btn{
+            background-color: #5a1f5f;
+            border:none;
+            color: white;
+            padding: 10px 30px;
+            margin: 20px 10px 0px 0px;
+            font-family: 'Montserrat', sans-serif; 
+            text-transform: uppercase;
+        }
+        .card{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(18rem, 1fr));
+            grid-gap: 1rem;
+        }
+        .card-content{
+            display: grid;
+            grid-template-rows: 100px auto auto;
+            box-shadow: 0.5px 2px 2px grey;
+            margin: 10px;
+        }
+        .card-content img{
+            grid-row: 1/2;
+            display: flex;
+            justify-self: center;
+        }
+        .card-text{
+            grid-row: 2/3;
+            padding: 0px 15px 10px 15px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif; 
+            font-size: .875rem;
+        }
+        .card-subtitle{
+            grid-row: 3/4;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif; 
+        }
+        .releases-btn{
+            grid-row: 3/4;
+        }
+        .updates{
+            background-image: url("images/BG copy.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .updates-content{
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        .updates-card-content img{
+            width: auto;
+            display: flex;
+            justify-self: center;
+        }
+        .updates-subtitle{
+            grid-row: 2/3;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.15rem;
+        }
+        .updates-btn{
+            grid-row: 4/5;
+        }
+        .updates-card{
+            grid-row:3/4;
+        }
+        .updates-card-content{
+            display: grid;
+            grid-template-rows: 200px auto auto;
+            margin: 10px;
+        }
+        p.caption{
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase; 
+            font-weight: bold;
+            padding: 10px;
+        }
+        .updates-card-content .card-subtitle{
+            text-align: left;
+            padding: 0;
+            text-transform: uppercase;
+            font-size: .875rem;
+        }
+        .updates-card{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(16rem, 1fr));
+            grid-gap: 1rem;
+        }
+        .header-card {
+            display: flex;
+            justify-content: center;
+            grid-gap: 1rem;
+            align-items: c;
+        }
+        header .card-content{
+            grid-template-rows: auto auto; 
+        }
+        header .card-text{
+            font-size: 3rem;
+            padding-bottom: 0px;
+            color: white;
+        }
+        header .card-subtitle{
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .benefits-content{
+            display: grid;
+            grid-template-columns: 360px auto;
+            width: 1080px;
+            padding-top: 100px;
+        }
+        .benefits-card{
+            grid-column: 1/2;
+        }
+        .benefits-section{
+            grid-column: 2/3;
+        }
+        .benefits-text{
+            padding: 20px 0px 20px ;
+            font-family: 'Montserrat', sans-serif;   
+        }
+       
+        @media(max-width: 1080px){
+        .container, .hero-content, .releases-content, .updates-content{
+            width: 100%;
+            margin: 0 auto;
+        }
+        .header-card {
+            grid-gap: 0rem;
+        }
+         header .card-text{
+            font-size: 1.5rem;
+        }
+        .container{
+            margin-bottom: 100px;
+        }
+        .nav-bar{
+            display: none;
+        }
+        .img-container img{
+            width: 100%;
+            height: 100%;
+        }
+        header h4{
+            padding: 0px 10px;
+        }
+        header .main-text{
+            font-size: 1.5rem;
+        }
+        .updates{
+            position: relative;
+            top: -300px;
+            padding: 400px 0px 300px 0px;
+        }
+        .updates-content{
+            padding: 100px 0px 100px 0px;
+        }
+        .fa-bars{
+            color: white;
+            font-size: 1.5rem;
+        }
+        #title{
+            font-size: 1.25rem;
+        }
+        }   
+    </style>
 </head>
 <body>
     <div class="main">
     <div class="container">
     <nav>
+        <div class="menu-bar">
+        <i class="fa fa-bars"></i>
+        </div>
+
         <ul class= "nav-bar">
             <li class= "nav-link"><a href= "#"><img src="images/menu.png" class= "logo" alt=""></a></li>
             <li class= "nav-link"><a href= "#">Product</a></li>
@@ -57,7 +368,7 @@
     <div class="hero">
         <div class="hero-content">
             <div class="hero-text">
-        <h2>Reefic Protocol Explained</h2>
+        <h2 id="title">Reefic Protocol Explained</h2>
             </div>
         <div class="img-container">
         <img src="images/Layer 3.png" alt="">
@@ -77,7 +388,7 @@
     <div class="releases">
        <div class="releases-content">
         <div class="releases-text">
-            <h2>Reefic Press Releases</h2>
+            <h2 id="title">Reefic Press Releases</h2>
         </div>
         <div class="card">
             <div class="card-content">
@@ -104,7 +415,7 @@
     <div class="updates">
         <div class="updates-content">
             <div class="updates-text">
-                <h2>Reefic Protocol Updates</h2>
+                <h2 id="title">Reefic Protocol Updates</h2>
             </div>
             <h3 class="updates-subtitle">Stay up-to-date with current news</h3>
       
@@ -151,5 +462,7 @@
         </div>
     </div>
 </div>
+
+
 </body>
 </html>
